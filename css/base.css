@@ -1,0 +1,38 @@
+/* --------------------------------------------------------- General rules ----------------------------------------------------------*/
+/* Police */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800;900&display=swap');
+
+body{
+    margin: 0; /* no margin top/bottom for page, no margin left/right for header (mobile, tablet) & footer (mobile, tablet, dekstop) */
+    font-family: "Raleway", sans-serif;
+}
+
+section{
+    margin: 0 40px;
+}
+
+h1{
+    font-weight: 700;
+}
+
+h2, span{
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.header, .header__logo, .header__signIn, .header__nav, .header__nav--link, .search, .search__icon, .filters, .filters__title,
+.filters__filter, .filters__filter div{
+    display: flex;
+}
+
+/* ----------------------------------------------  Desktop and large screens rules ---------------------------------------------- */
+@media (min-width: 769px) {
+    header{
+        margin: 0 40px;
+    }
+}
