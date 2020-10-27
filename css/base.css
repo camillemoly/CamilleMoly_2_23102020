@@ -7,10 +7,6 @@ body{
     font-family: "Raleway", sans-serif;
 }
 
-section{
-    margin: 0 40px;
-}
-
 h1{
     font-weight: 700;
 }
@@ -20,19 +16,31 @@ h2, span{
     font-size: 1rem;
 }
 
+h3{
+    font-size: 1rem;
+    margin: 0;
+}
+
 a{
     text-decoration: none;
     color: black;
 }
 
-.header, .header__logo, .header__signIn, .header__nav, .header__nav--link, .search, .search__icon, .filters, .filters__title,
-.filters__filter, .filters__filter div{
+.header, .header__logo, .header__signIn, .header__nav, .header__nav--link,
+.search, .search__icon, .filters, .filters__title, .filters__filter, .filters__filter div, .infos, .infos__icon,
+.hostAndPopulars, .mostPopulars__title, .mostPopulars__card, .hosting__card--description, .mostPopulars__card--description{
     display: flex;
 }
 
+.header__nav--link, .search__icon, .filters__filter, .filters__filter div, .infos__icon{
+    justify-content: center;
+    align-items: center;
+}
+
+
 /* ----------------------------------------------  Desktop and large screens rules ---------------------------------------------- */
-@media (min-width: 769px) {
-    header{
-        margin: 0 40px;
+@media (min-width: 1024px) {
+    header, section{
+        margin: 0 20px;
     }
 }
