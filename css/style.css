@@ -1,6 +1,6 @@
 @import "./base.css";
 
-/* ------------------------------------------------------ HEADER & NAVIGATION ---------------------------------------------------*/
+/* *************************************************** HEADER & NAVIGATION *************************************************** */
 .header__logo, .header__space, .header__nav, .header__signIn{
     height: 90px;
 }
@@ -44,7 +44,7 @@
     transition: all 300ms;
 }
 
-/* Tablet landscape, laptop and desktop */
+/* ---------- Tablet landscape, laptop and desktop ---------- */
 @media (min-width: 769px) {
     .header{
         flex-wrap: nowrap; /* to cancel wrap of mobile device */
@@ -73,12 +73,13 @@
     }
 }
 
-/* ---------------------------------------------------------- SEARCH & FILTERS ----------------------------------------------------- */
+
+/* *************************************************** SEARCH & FILTERS *************************************************** */
 .searchAndFiltersSection{ /* margin only in this section on mobile &tablet */
     margin: 0 20px;
 }
 
-/* ---------- SEARCH ---------- */
+/* --------------------------------------------------------- SEARCH --------------------------------------------------------- */
 .search{
     height: 50px;
     width: 280px;
@@ -113,7 +114,7 @@
     display: none; /* hide the span "Rechercher" instead of search icon */
 }
 
-/* Tablet landscape, laptop and desktop */
+/* ---------- Tablet landscape, laptop and desktop ---------- */
 @media (min-width: 769px) {
     .search{
         width: 500px;
@@ -132,7 +133,7 @@
 }
 
 
-/* ---------- FILTERS ---------- */
+/* --------------------------------------------------------- FILTERS --------------------------------------------------------- */
 .filters{
     flex-wrap: wrap;
     margin-top: 20px;
@@ -185,28 +186,31 @@
 }
 
 
-/* ------------------------------------------------------ HOSTING & MOST POPULARS -------------------------------------------------- */
+/* *********************************************** HOSTING, MOST POPULARS, ACTIVITIES *********************************************** */
 .hostAndPopulars{
     flex-direction: column; /* flex the section in order to change the order of hosting & most populars */
     margin-top: 20px;
 }
-.hosting__card, .mostPopulars__card{
+.hosting, .mostPopulars, .activities{
+    padding: 10px 20px;
+}
+.hosting__card, .mostPopulars__card, .activities__card{
     height: 200px;
     margin-bottom: 20px;
     border: 6px solid white;
     border-radius: 20px;
     background-color: white;
 }
-.hosting__card a, .mostPopulars__card a{ /* to extend the link throughout the div */
+.hosting__card a, .mostPopulars__card a, .activities__card a{ /* to extend the link throughout the div */
     display: block;
     height: 100%;
     width: 100%;
 }
-.hosting__card:hover, .mostPopulars__card:hover{
+.hosting__card:hover, .mostPopulars__card:hover, .activities__card:hover{
     transform: scale(1.02);
     transition: all 300ms;
 }
-.hosting__card--photo img, .mostPopulars__card--photo img{
+.hosting__card--photo img, .mostPopulars__card--photo img, .activities__card--photo img{
     height: 100%;
     width: 100%;
     object-fit: cover; /* resize the img in the div to cover the entire div */
@@ -216,19 +220,17 @@
     font-weight: 500;
 }
 
-/* ---------- HOSTING ---------- */
+/* ------------------------------------------------------------ HOSTING ------------------------------------------------------------ */ 
 .hosting{
     order: 2; /* to place hosting after most populars for tablet & mobile */
-    padding: 10px 20px;
 }
-.hosting__card{
+.hosting__card, .activities__card{
     box-shadow: 0 0 18px -1px grey;
 }
 .hosting__card--photo{
     height: 65%;
-    border-radius: 20px 20px 0 0;
 }
-.hosting__card--photo img{
+.hosting__card--photo img, .activities__card--photo img{
     border-radius: 15px 15px 0 0;
 }
 .hosting__card--description{
@@ -243,10 +245,9 @@
     cursor: pointer;
 }
 
-/* ---------- MOST POPULARS ---------- */
+/* --------------------------------------------------------- MOST POPULARS --------------------------------------------------------- */
 .mostPopulars{
     background-color: #F2F2F2;
-    padding: 10px 20px;
 }
 .mostPopulars__title{
     justify-content: space-between;
@@ -254,7 +255,6 @@
 }
 .mostPopulars__card--photo{
     width: 40%;
-    border-radius: 20px 0 0 20px;
 }
 .mostPopulars__card--photo img{
     border-radius: 15px 0 0 15px;
@@ -274,19 +274,49 @@
     color: #F2F2F2;
 }
 
-/* Tablet < 550px --> in order to the img are not too streched */
+
+/* ----------------------------------------------------------- ACTIVITIES ----------------------------------------------------------- */
+.activities__card--photo{
+    height: 80%;
+}
+.activities__card--description{
+    align-items: center;
+    margin-left: 10px;
+    height: 20%;
+}
+
+/* ---------- Tablet < 550px --> in order to the img are not too streched ---------- */
 @media (min-width: 550px) {
-    .hosting__list{
+    .hosting__list, .activities__list{
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
     }
-    .hosting__list a{
+    .hosting__list a, .activities__list >* /* select all the children */ {
         width: 45%; /* to place 2 cards per line */
+    }
+    .activities__card--split{
+        height: 440px;
+        border: 6px solid transparent; /* to have the same height as the div */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; /* to define a space between the div AND center them */
+    }
+    .activities__card--small{
+        margin-bottom: 0; /* remove the margin-bottom otherwise it shifts the divs */
+    }
+    .activities__card--tall{
+        height: 440px;
+    }
+    .activities__card--tall .activities__card--photo{
+        height: 90%;
+    }
+    .activities__card--tall .activities__card--description{
+        height: 10%;
     }
 }
 
-/* Laptop and desktop */
+/* ---------- Laptop and desktop ---------- */
 @media (min-width: 1024px) {
     .hostAndPopulars{
         flex-direction: row;
@@ -304,6 +334,9 @@
     .hosting__list a{
         width: 32%; /* to place 3 cards per line */
     }
+    .activities__list >*{
+        width: 23%; /* to place 4 cards per line */
+    }
     .hosting__card{
         box-shadow: none;
     }
@@ -319,7 +352,41 @@
     }
 }
 
-/* ----------------------------------------------- Specifications for tablet and mobil only ------------------------------------------*/
+
+/* ************************************************************ FOOTER ************************************************************ */
+.footer{
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0 20px 30px 20px;
+    background-color: #F2F2F2;
+}
+.footer__section{
+    flex-direction: column;
+    margin-top: 30px;
+}
+.footer a{
+    margin-top: 10px;
+}
+
+@media (min-width: 769px) {
+    .footer{
+        flex-direction: row;
+        justify-content: space-around;
+        padding-left: 0;
+    }
+}
+
+@media (min-width: 1024px) {
+    .footer{
+        justify-content: flex-start;
+        padding-left: 30px;
+    }
+    .footer__section{
+        margin-right: 173px;
+    }
+}
+
+/* ******************************************** Specifications for tablet and mobil only ******************************************** */
 @media (max-width: 768px) {
     .header__logo img{
         margin-left: 20px; /* this & header__signIn a margin. Don't put a margin on header because create a margin for nav too */
