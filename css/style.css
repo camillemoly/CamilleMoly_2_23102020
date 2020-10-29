@@ -47,7 +47,7 @@
 /* ---------- Tablet landscape, laptop and desktop ---------- */
 @media (min-width: 769px) {
     .header{
-        flex-wrap: nowrap; /* to cancel wrap of mobile device */
+        flex-wrap: nowrap; /* to cancel wrap */
     }
     .header__logo{
         order: 1;
@@ -59,7 +59,7 @@
         width: 40%; /* to adapt the space between logo and nav without changing their width */
     }
     .header__nav{
-        order: 3;
+        order: 3; /* re order the divs */
         width: 350px; /* fixed width */
     }
     .header__nav--link:hover{
@@ -75,14 +75,14 @@
 
 
 /* *************************************************** SEARCH & FILTERS *************************************************** */
-.searchAndFiltersSection{ /* margin only in this section on mobile &tablet */
+.searchAndFiltersSection{ /* margin only in this section on mobile & tablet portrait */
     margin: 0 20px;
 }
 
 /* --------------------------------------------------------- SEARCH --------------------------------------------------------- */
 .search{
     height: 50px;
-    width: 280px;
+    width: 100%;
     margin-top: 30px;
 }
 .search__icon{
@@ -114,6 +114,13 @@
     display: none; /* hide the span "Rechercher" instead of search icon */
 }
 
+/* ---------- Tablet portrait ---------- */
+@media (min-width: 481px) and (max-width: 768px) {
+    .search{
+        width: 440px; /* because the 100% width of search bar on mobile is not aesthetic on tablet portrait (too long) */
+    }
+}
+
 /* ---------- Tablet landscape, laptop and desktop ---------- */
 @media (min-width: 769px) {
     .search{
@@ -142,6 +149,7 @@
     align-items: center; /* to align the title with the filters */
     margin-top: 0;
     margin-right: 40px;
+    font-size: 1.2rem;
 }
 .filters__filter{
     position: relative;
@@ -151,6 +159,7 @@
     margin-right: 30px;
     margin-bottom: 10px; /*to create a space between the filters when it's wrap */
     cursor: pointer;
+    font-weight: 700;
 }
 .filters__filter:hover{
     background-color: #0065FC;
@@ -207,7 +216,9 @@
     width: 100%;
 }
 .hosting__card:hover, .mostPopulars__card:hover, .activities__card:hover{
-    transform: scale(1.02);
+    transform: scale(1.05);
+    border-color: #DEEBFF;
+    background-color: #DEEBFF;
     transition: all 300ms;
 }
 .hosting__card--photo img, .mostPopulars__card--photo img, .activities__card--photo img{
@@ -261,7 +272,7 @@
 }
 .mostPopulars__card--description{
     flex-direction: column;
-    justify-content: space-between; /* to place the stars with a big space betweekn the title */
+    justify-content: space-between; /* to place the stars with a big space between the title */
     width: 60%;
     margin: 20px 10px;
 }
@@ -271,7 +282,7 @@
     color: #0065FC;
 }
 .empty{
-    color: #F2F2F2;
+    color: #e0e0e0;
 }
 
 
@@ -285,7 +296,7 @@
     height: 20%;
 }
 
-/* ---------- Tablet < 550px --> in order to the img are not too streched ---------- */
+/* ---------- Tablet < 550px --> in order to the cards are not too long (not aesthetic) ---------- */
 @media (min-width: 550px) {
     .hosting__list, .activities__list{
         display: flex;
@@ -297,7 +308,7 @@
     }
     .activities__card--split{
         height: 440px;
-        border: 6px solid transparent; /* to have the same height as the div */
+        border: 6px solid transparent; /* to have the same height as the not splited cards */
         display: flex;
         flex-direction: column;
         justify-content: space-between; /* to define a space between the div AND center them */
@@ -357,7 +368,7 @@
 .footer{
     flex-direction: column;
     justify-content: space-between;
-    padding: 0 20px 30px 20px;
+    padding: 0 20px 40px 30px;
     background-color: #F2F2F2;
 }
 .footer__section{
@@ -368,6 +379,7 @@
     margin-top: 10px;
 }
 
+/* ---------- Tablet landscape ---------- */
 @media (min-width: 769px) {
     .footer{
         flex-direction: row;
@@ -376,25 +388,13 @@
     }
 }
 
+/* ---------- Tablet landscape ---------- */
 @media (min-width: 1024px) {
     .footer{
         justify-content: flex-start;
         padding-left: 30px;
     }
     .footer__section{
-        margin-right: 173px;
-    }
-}
-
-/* ******************************************** Specifications for tablet and mobil only ******************************************** */
-@media (max-width: 768px) {
-    .header__logo img{
-        margin-left: 20px; /* this & header__signIn a margin. Don't put a margin on header because create a margin for nav too */
-    }
-    .header__signIn a{
-        margin-right: 20px;
-    }
-    .filters__title{
-        width: 100%; /* the title take 100% width's page so the filters are put below */
+        margin-right: 16%; /* to prevent the wrap of links */
     }
 }

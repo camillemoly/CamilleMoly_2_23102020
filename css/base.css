@@ -1,19 +1,11 @@
-/* --------------------------------------------------------- General rules ----------------------------------------------------------*/
+/* ************************************************************** General ******************************************************************* */
 /* Police */
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800;900&display=swap');
 
 body{
-    margin: 0; /* no margin top/bottom for page, no margin left/right for header (mobile, tablet) & footer (mobile, tablet, dekstop) */
+    margin: 0;
+    /* no margin top/bottom for page, no margin left/right for header (mobile, tablet) & footer (mobile, tablet, laptop, dekstop) */
     font-family: "Raleway", sans-serif;
-}
-
-h1{
-    font-weight: 700;
-}
-
-h2, span{
-    font-weight: 700;
-    font-size: 1rem;
 }
 
 h3{
@@ -38,9 +30,33 @@ a{
     align-items: center;
 }
 
-
-/* ----------------------------------------------  Desktop and large screens rules ---------------------------------------------- */
-@media (min-width: 1024px) {
+/* ************************************************************** Specifics ******************************************************************* */
+/* ---------- Galaxy Fold & devices < 300px ---------- */
+@media (max-width: 299px) { 
+    .header__nav{
+        font-size: 0.6rem;
+    }
+    .searchAndFiltersSection h1{
+        font-size: 1.2rem;
+    }
+    .mostPopulars__title{
+        font-size: 0.9rem;
+    }
+}
+/* ---------- Tablet portrait and mobil only ---------- */
+@media (max-width: 768px) {
+    .header__logo img{
+        margin-left: 20px; /* this & header__signIn a margin. Don't put a margin on header because create a margin for nav too */
+    }
+    .header__signIn a{
+        margin-right: 20px;
+    }
+    .filters__title{
+        width: 100%; /* the title take 100% width's page so the filters are put below */
+    }
+}
+/* ----------  Tablet landscape, desktop and large screens only ---------- */
+@media (min-width: 769px) {
     header, section{
         margin: 0 20px;
     }
