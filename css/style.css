@@ -1,36 +1,40 @@
+/* CSS import */
 @import "./base.css";
+
 
 /* *************************************************** HEADER & NAVIGATION *************************************************** */
 .header__logo, .header__space, .header__nav, .header__signIn{
     height: 90px;
 }
 .header{
-    flex-wrap: wrap; /* so that nav bar is below of logo and signIn */
+    position: relative;
 }
-.header__space{
-    display: none; /* header__space hidden */
+.header__container{
+    flex-wrap: wrap; /* so that nav bar is below of logo and signIn */
+    justify-content: flex-end;
+    width: 100%;
 }
 .header__logo{
-    order: 1;
-    align-items: center; /* to center in the div */
-    width: 50%;
-}
-.header__logo img{
+    position: absolute; /* the logo doesn't interfere so the header__signIn can be 100% width of the page and wrap the header__nav */
+    top: 21px;
+    left: 0px;
     height: 45px;
 }
+.header__logo img{
+    height: 45px; /* resize the logo */
+}
 .header__signIn{
-    order: 2; /* change the order so that the nav bar is below and not the signin */
-    justify-content: flex-end;
+    justify-content: flex-end; /* to have the same space between hosting activities and signIn */
     align-items: center;
-    width: 50%;
+    width: 100%; /* to take the all width of the page */
 } 
 .header__signIn a{
     font-weight: 700;
     color: #0065FC;
 }
 .header__nav{
-    order: 3;
-    width: 100%; /* to take the all width of the page (otherwise it's cut) */
+    order: 3; /* change the order so that the nav bar is below and not the signin */
+    width: 100%; /* to take the all width of the page */
 }
 .header__nav--link{
     width: 50%;
@@ -46,20 +50,7 @@
 
 /* ---------- Tablet landscape, laptop and desktop ---------- */
 @media (min-width: 769px) {
-    .header{
-        flex-wrap: nowrap; /* to cancel wrap */
-    }
-    .header__logo{
-        order: 1;
-        width: 400px; /* fixed width */
-    }
-    .header__space{
-        order: 2;
-        display: block; /* to show the header__space */
-        width: 40%; /* to adapt the space between logo and nav without changing their width */
-    }
-    .header__nav{
-        order: 3; /* re order the divs */
+    .header__nav{ 
         width: 350px; /* fixed width */
     }
     .header__nav--link:hover{
@@ -68,14 +59,14 @@
         color: #0065FC;
     }
     .header__signIn{
-        order: 4;
-        width: 100px; /* fixed width */
+        order: 3; /* re order the divs */
+        width: 100px; /* fixed width */ 
     }
 }
 
 
 /* *************************************************** SEARCH & FILTERS *************************************************** */
-.searchAndFiltersSection{ /* margin only in this section on mobile & tablet portrait */
+.searchAndFilters{ /* margin only in this section on mobile & tablet portrait */
     margin: 0 20px;
 }
 
@@ -203,10 +194,12 @@
 .hosting, .mostPopulars, .activities{
     padding: 10px 20px;
 }
+.hosting__card, .mostPopulars__card{
+    border: 6px solid white;
+}
 .hosting__card, .mostPopulars__card, .activities__card{
     height: 200px;
     margin-bottom: 20px;
-    border: 6px solid white;
     border-radius: 20px;
     background-color: white;
 }
@@ -308,7 +301,6 @@
     }
     .activities__card--split{
         height: 440px;
-        border: 6px solid transparent; /* to have the same height as the not splited cards */
         display: flex;
         flex-direction: column;
         justify-content: space-between; /* to define a space between the div AND center them */
@@ -368,7 +360,7 @@
 .footer{
     flex-direction: column;
     justify-content: space-between;
-    padding: 0 20px 40px 30px;
+    padding: 0 30px 40px 30px;
     background-color: #F2F2F2;
 }
 .footer__section{
@@ -383,8 +375,7 @@
 @media (min-width: 769px) {
     .footer{
         flex-direction: row;
-        justify-content: space-around;
-        padding-left: 0;
+        justify-content: space-between;
     }
 }
 
@@ -392,7 +383,6 @@
 @media (min-width: 1024px) {
     .footer{
         justify-content: flex-start;
-        padding-left: 30px;
     }
     .footer__section{
         margin-right: 16%; /* to prevent the wrap of links */

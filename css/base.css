@@ -1,11 +1,16 @@
-/* ************************************************************** General ******************************************************************* */
+/* ********************************************************* General ************************************************************** */
 /* Police */
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800;900&display=swap');
 
 body{
-    margin: 0;
-    /* no margin top/bottom for page, no margin left/right for header (mobile, tablet) & footer (mobile, tablet, laptop, dekstop) */
     font-family: "Raleway", sans-serif;
+    margin: auto;
+    /* no margin top/bottom for the page and center the page horizontally when the navigator > 1440 px */
+    min-height: 100vh; /* indicates that the body must be at least the height of the screen whatever the device */
+    max-width: 1440px; /* to keep the model appearance */
+    display: flex; /* to distribute all the containers fairly whatever the height of the device */
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 h3{
@@ -18,7 +23,7 @@ a{
     color: black;
 }
 
-.header, .header__logo, .header__signIn, .header__nav, .header__nav--link,
+.header, .header__logo, .header__container, .header__signIn, .header__nav, .header__nav--link,
 .search, .search__icon, .filters, .filters__title, .filters__filter, .filters__filter div, .infos, .infos__icon,
 .hostAndPopulars, .hosting__card--description, .mostPopulars__title, .mostPopulars__card, .mostPopulars__card--description,
 .activities__card--description, .footer, .footer div{
@@ -30,34 +35,35 @@ a{
     align-items: center;
 }
 
-/* ************************************************************** Specifics ******************************************************************* */
+/* ******************************************************** Specifics ************************************************************* */
 /* ---------- Galaxy Fold & devices < 300px ---------- */
 @media (max-width: 299px) { 
-    .header__nav{
-        font-size: 0.6rem;
+    .header__nav, .header__signIn{
+        font-size: 0.8rem;
     }
-    .searchAndFiltersSection h1{
-        font-size: 1.2rem;
-    }
-    .mostPopulars__title{
-        font-size: 0.9rem;
+    .searchAndFilters h1, .hosting h1, .mostPopulars h1, .activities h1{
+        font-size: 1.2rem;;
     }
 }
+
 /* ---------- Tablet portrait and mobil only ---------- */
 @media (max-width: 768px) {
     .header__logo img{
-        margin-left: 20px; /* this & header__signIn a margin. Don't put a margin on header because create a margin for nav too */
+        margin-left: 20px; /* this & header__signIn give a margin. Don't put a margin on header because create a margin for nav too */
     }
     .header__signIn a{
-        margin-right: 20px;
+        margin-right: 20px; 
     }
     .filters__title{
         width: 100%; /* the title take 100% width's page so the filters are put below */
     }
 }
+
 /* ----------  Tablet landscape, desktop and large screens only ---------- */
 @media (min-width: 769px) {
     header, section{
-        margin: 0 20px;
+        /* margin: 0 20px; */
+        margin-left: 20px;
+        margin-right: 20px;
     }
 }
