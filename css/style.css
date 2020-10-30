@@ -115,10 +115,13 @@
 /* ---------- Tablet landscape, laptop and desktop ---------- */
 @media (min-width: 769px) {
     .search{
-        width: 500px;
+        width: 460px;
+    }
+    .search__icon{
+        width: 55px;
     }
     .search__button{
-        width: 120px;
+        width: 130px;
     }
     .search__button span{
         display: inline; /* show the span "Rechercher" */
