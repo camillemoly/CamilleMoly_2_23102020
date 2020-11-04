@@ -46,8 +46,8 @@ a{
     }
 }
 
-/* ---------- Tablet portrait and mobile only ---------- */
-@media (max-width: 768px) {
+/* ---------- Tablet and mobile only ---------- */
+@media (max-width: 1024px) {
     .header__logo img{
         margin-left: 20px; /* this & header__signIn give a margin. Don't put a margin on header because create a margin for nav too */
     }
@@ -59,10 +59,9 @@ a{
     }
 }
 
-/* ----------  Tablet landscape, laptop & desktop ---------- */
-@media (min-width: 769px) {
+/* ----------  Laptop & desktop ---------- */
+@media (min-width: 1025px) {
     header, section{
-        /* margin: 0 20px; */
         margin-left: 20px;
         margin-right: 20px;
     }
