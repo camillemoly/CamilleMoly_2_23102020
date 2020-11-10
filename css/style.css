@@ -1,7 +1,6 @@
 /* CSS import */
 @import "./base.css";
 
-
 /* *************************************************** HEADER & NAVIGATION *************************************************** */
 .header__logo, .header__space, .header__nav, .header__signIn{
     height: 90px;
@@ -48,22 +47,6 @@
     transition: all 300ms;
 }
 
-/* ---------- Tablet landscape, laptop and desktop ---------- */
-@media (min-width: 769px) {
-    .header__nav{ 
-        width: 350px; /* fixed width */
-    }
-    .header__nav--link:hover{
-        border-bottom: 3px solid transparent; /* to hide the border-bottom */
-        border-top: 3px solid #0065FC;
-        color: #0065FC;
-    }
-    .header__signIn{
-        order: 3; /* re order the divs */
-        width: 100px; /* fixed width */ 
-    }
-}
-
 
 /* *************************************************** SEARCH & FILTERS *************************************************** */
 .searchAndFilters{ /* margin only in this section on mobile & tablet portrait */
@@ -104,35 +87,6 @@
 .search__button span{
     display: none; /* hide the span "Rechercher" instead of search icon */
 }
-
-/* ---------- Tablet portrait ---------- */
-@media (min-width: 481px) and (max-width: 768px) {
-    .search{
-        width: 440px; /* because the 100% width of search bar on mobile is not aesthetic on tablet portrait (too long) */
-    }
-}
-
-/* ---------- Tablet landscape, laptop and desktop ---------- */
-@media (min-width: 769px) {
-    .search{
-        width: 460px;
-    }
-    .search__icon{
-        width: 55px;
-    }
-    .search__button{
-        width: 130px;
-    }
-    .search__button span{
-        display: inline; /* show the span "Rechercher" */
-        font-size: 1rem;
-        font-weight: 600; 
-    }
-    .search__button i{
-        display: none; /* hide the search icon instead of span "Rechercher" */
-    }
-}
-
 
 /* --------------------------------------------------------- FILTERS --------------------------------------------------------- */
 .filters{
@@ -281,7 +235,6 @@
     color: #e0e0e0;
 }
 
-
 /* ----------------------------------------------------------- ACTIVITIES ----------------------------------------------------------- */
 .activities__card--photo{
     height: 80%;
@@ -292,8 +245,27 @@
     height: 20%;
 }
 
-/* ---------- Tablet < 550px --> in order to the cards are not too long (not aesthetic) ---------- */
-@media (min-width: 550px) {
+
+/* ************************************************************ FOOTER ************************************************************ */
+.footer{
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0 30px 40px 30px;
+    background-color: #F2F2F2;
+}
+.footer__section{
+    flex-direction: column;
+    margin-top: 30px;
+}
+.footer a{
+    margin-top: 10px;
+}
+
+
+/* ********************************************************** BREAKPOINTS ********************************************************** */
+
+/* ---------- Tablet ---------- */
+@media (min-width: 481px) {
     .hosting__list, .activities__list{
         display: flex;
         justify-content: space-between;
@@ -322,8 +294,52 @@
     }
 }
 
+/* ---------- Tablet portrait ---------- */
+@media (min-width: 481px) and (max-width: 768px) {
+    .search{
+        width: 440px; /* because the 100% width of search bar on mobile is not aesthetic on tablet portrait (too long) */
+    }
+}
+
+/* ---------- Tablet landscape, laptop and desktop ---------- */
+@media (min-width: 769px) {
+    .header__nav{ 
+        width: 350px; /* fixed width */
+    }
+    .header__nav--link:hover{
+        border-bottom: 3px solid transparent; /* to hide the border-bottom */
+        border-top: 3px solid #0065FC;
+        color: #0065FC;
+    }
+    .header__signIn{
+        order: 3; /* re order the divs */
+        width: 100px; /* fixed width */ 
+    }
+    .search{
+        width: 460px;
+    }
+    .search__icon{
+        width: 55px;
+    }
+    .search__button{
+        width: 130px;
+    }
+    .search__button span{
+        display: inline; /* show the span "Rechercher" */
+        font-size: 1rem;
+        font-weight: 600; 
+    }
+    .search__button i{
+        display: none; /* hide the search icon instead of span "Rechercher" */
+    }
+    .footer{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
 /* ---------- Laptop and desktop ---------- */
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
     .hostAndPopulars{
         flex-direction: row;
         justify-content: space-between;
@@ -356,34 +372,6 @@
     .mostPopulars__card--description{
         margin: 10px; /* to reduce the margin-top space */
     }
-}
-
-
-/* ************************************************************ FOOTER ************************************************************ */
-.footer{
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 0 30px 40px 30px;
-    background-color: #F2F2F2;
-}
-.footer__section{
-    flex-direction: column;
-    margin-top: 30px;
-}
-.footer a{
-    margin-top: 10px;
-}
-
-/* ---------- Tablet landscape ---------- */
-@media (min-width: 769px) {
-    .footer{
-        flex-direction: row;
-        justify-content: space-between;
-    }
-}
-
-/* ---------- Tablet landscape ---------- */
-@media (min-width: 1024px) {
     .footer{
         justify-content: flex-start;
     }

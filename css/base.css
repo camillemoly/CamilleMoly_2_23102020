@@ -35,7 +35,7 @@ a{
     align-items: center;
 }
 
-/* ******************************************************** Specifics ************************************************************* */
+/* ******************************************************** Specifics breakpoints ************************************************************* */
 /* ---------- Galaxy Fold & devices < 300px ---------- */
 @media (max-width: 299px) { 
     .header__nav, .header__signIn{
@@ -47,7 +47,7 @@ a{
 }
 
 /* ---------- Tablet and mobile only ---------- */
-@media (max-width: 1024px) {
+@media (max-width: 1023px) {
     .header__logo img{
         margin-left: 20px; /* this & header__signIn give a margin. Don't put a margin on header because create a margin for nav too */
     }
@@ -60,7 +60,7 @@ a{
 }
 
 /* ----------  Laptop & desktop ---------- */
-@media (min-width: 1025px) {
+@media (min-width: 1024px) {
     header, section{
         margin-left: 20px;
         margin-right: 20px;
