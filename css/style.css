@@ -222,7 +222,7 @@
 }
 .mostPopulars__card--description{
     flex-direction: column;
-    justify-content: space-between; /* to place the stars with a big space between the title */
+    justify-content: space-between;
     width: 60%;
     margin: 20px 10px;
 }
